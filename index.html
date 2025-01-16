@@ -21,7 +21,6 @@
 		gtag('js', new Date());
 		gtag('config', 'G-8XJW6SJRGT');
 	</script>
-
 </head>
 
 <body class="is-preload">
@@ -80,7 +79,7 @@
 						Every company seeks QA Engineers with the right skills to ensure impeccable product quality. 
 						This realization motivated me to enhance my expertise in QA, Test Automation, and beyond.</p>
 					<h2>Who I'm</h2>
-					<p>I'm an ISTQB Certified Software Testing Engineer with over 7 years of experience in the field of 
+					<p>I'm an ISTQB Certified Software Testing Engineer with over <span id="experienceYears"></span> years of experience in the field of 
 						Quality Assurance, I have developed a solid foundation in Manual, Automation, and API testing. 
 						My expertise includes working with tools like Cypress.io, WebDriver.io, Playwright, CodeceptJS, 
 						Selenium, and more. I am proficient in programming languages such as Java, JavaScript, and TypeScript. 
@@ -274,6 +273,23 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
+	<!-- Script to calculate years of experience -->
+	<script>
+		const startDate = new Date("2016-11-01");
+
+		const currentDate = new Date();
+
+		let yearsDifference = currentDate.getFullYear() - startDate.getFullYear();
+
+		if (
+			currentDate.getMonth() < startDate.getMonth() ||
+			(currentDate.getMonth() === startDate.getMonth() && currentDate.getDate() < startDate.getDate())
+		) {
+			yearsDifference--;
+		}
+
+		document.getElementById("experienceYears").textContent = yearsDifference;
+	</script>
 </body>
 
 </html>
